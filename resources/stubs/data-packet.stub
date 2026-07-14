@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use {{ data_fqcn }};
+use Splitstack\Typewriter\DataPacket;
+
+class {{ class }} extends DataPacket
+{
+    public function __construct(
+        public readonly {{ data_class }} $data,
+        array $meta = [],
+        array $defaults = [],
+        mixed $default = null,
+        string|int|null $source = null,
+        string|int|null $target = null,
+    ) {
+        parent::__construct($data->toArray(), $meta, $defaults, $default, $source, $target);
+    }
+}

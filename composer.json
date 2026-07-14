@@ -1,0 +1,51 @@
+{
+  "name": "splitstack/laravel-typewriter",
+  "description": "Unified TypeScript tooling for Laravel: DataPacket transport envelope, DTO/VO type generation, and Wayfinder route types in a single command.",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.4",
+    "illuminate/console": "^11.0|^12.0|^13.0",
+    "illuminate/support": "^11.0|^12.0|^13.0",
+    "phpstan/phpdoc-parser": "^2.0",
+    "spatie/laravel-data": "^4.0",
+    "spatie/laravel-typescript-transformer": "^3.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "orchestra/testbench": "^9.0|^10.0",
+    "pestphp/pest": "^3.0|^4.0"
+  },
+  "suggest": {
+    "laravel/wayfinder": "Run wayfinder:generate alongside typewriter:generate in a single command."
+  },
+  "scripts": {
+    "test": "php vendor/bin/pest",
+    "lint": "vendor/bin/pint"
+  },
+  "autoload": {
+    "psr-4": {
+      "Splitstack\\Typewriter\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Splitstack\\Typewriter\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Splitstack\\Typewriter\\TypewriterServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
